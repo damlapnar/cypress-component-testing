@@ -2,7 +2,8 @@
 
 ![Cypress](https://img.shields.io/badge/Cypress-17202C?style=flat-square&logo=cypress&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+[![CI](https://github.com/damlapnar/cypress-component-testing/actions/workflows/cypress.yml/badge.svg)](https://github.com/damlapnar/cypress-component-testing/actions/workflows/cypress.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 End-to-end and component test suite built with Cypress 13 and TypeScript. Features custom commands, full checkout flow coverage, and cross-browser CI via GitHub Actions.
 
