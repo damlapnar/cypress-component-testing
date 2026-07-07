@@ -25,27 +25,26 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Cypress tests on \${{ matrix.browser }}
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          browser: \${{ matrix.browser }}
+          browser: ${{ matrix.browser }}
           spec: 'cypress/e2e/**/*.cy.ts'
           install: false
-        env:
-          CYPRESS_username: \${{ secrets.CYPRESS_USERNAME || 'standard_user' }}
-          CYPRESS_password: \${{ secrets.CYPRESS_PASSWORD || 'secret_sauce' }}
 
       - name: Upload screenshots on failure
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-\${{ matrix.browser }}
+          name: cypress-screenshots-${{ matrix.browser }}
           path: cypress/screenshots/
+          if-no-files-found: ignore
 
       - name: Upload videos
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: cypress-videos-\${{ matrix.browser }}
+          name: cypress-videos-${{ matrix.browser }}
           path: cypress/videos/
+          if-no-files-found: ignore
           retention-days: 7
