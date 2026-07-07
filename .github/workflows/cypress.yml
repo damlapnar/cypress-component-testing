@@ -27,24 +27,6 @@ jobs:
           spec: 'cypress/e2e/**/*.cy.ts'
           install: false
 
-      - name: Write step summary
-        if: always()
-        run: |
-          echo "## Cypress Test Results — chrome" >> $GITHUB_STEP_SUMMARY
-          if [ -d cypress/results ]; then
-            python3 -c "
-import os, json, glob
-files = glob.glob('cypress/results/*.json')
-passed = failed = 0
-for f in files:
-    d = json.load(open(f))
-    passed += d.get('stats',{}).get('passes', 0)
-    failed += d.get('stats',{}).get('failures', 0)
-print(f'| ✅ Passed | {passed} |')
-print(f'| ❌ Failed | {failed} |')
-" >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "Results not available" >> $GITHUB_STEP_SUMMARY
-          fi
-
       - name: Upload screenshots on failure
         uses: actions/upload-artifact@v4
         if: failure()
