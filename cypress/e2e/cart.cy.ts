@@ -17,9 +17,9 @@ describe('Cart', () => {
     cy.get('.cart_item').should('not.exist');
   });
 
-  it('should persist cart across page navigation', () => {
+  it('should persist cart after page reload', () => {
     cy.addToCart('Sauce Labs Backpack');
-    cy.visit('/inventory.html');
+    cy.reload();
     cy.get('.shopping_cart_badge').should('have.text', '1');
   });
 });
