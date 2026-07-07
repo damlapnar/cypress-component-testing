@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  cypress:
+    build: .
+    environment:
+      - CYPRESS_BASE_URL=${CYPRESS_BASE_URL:-https://www.saucedemo.com}
+    volumes:
+      - ./cypress/screenshots:/app/cypress/screenshots
+      - ./cypress/videos:/app/cypress/videos
