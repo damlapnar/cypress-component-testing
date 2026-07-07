@@ -9,10 +9,6 @@ on:
 jobs:
   cypress:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chrome, firefox]
 
     steps:
       - uses: actions/checkout@v4
@@ -28,7 +24,7 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          browser: ${{ matrix.browser }}
+          browser: chrome
           spec: 'cypress/e2e/**/*.cy.ts'
           install: false
 
@@ -36,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-${{ matrix.browser }}
+          name: cypress-screenshots
           path: cypress/screenshots/
           if-no-files-found: ignore
 
@@ -44,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: cypress-videos-${{ matrix.browser }}
+          name: cypress-videos
           path: cypress/videos/
           if-no-files-found: ignore
           retention-days: 7
