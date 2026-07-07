@@ -19,12 +19,14 @@ describe('Inventory', () => {
   });
 
   it('should sort products A to Z', () => {
-    cy.get('[data-test="product_sort_container"]').select('az');
+    cy.get('.inventory_list').should('be.visible');
+    cy.get('select.product_sort_container').select('az');
     cy.get('.inventory_item_name').first().should('have.text', 'Sauce Labs Backpack');
   });
 
   it('should sort products by price low to high', () => {
-    cy.get('[data-test="product_sort_container"]').select('lohi');
+    cy.get('.inventory_list').should('be.visible');
+    cy.get('select.product_sort_container').select('lohi');
     cy.get('.inventory_item_price').first().should('have.text', '$7.99');
   });
 
