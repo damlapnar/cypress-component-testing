@@ -21,6 +21,7 @@ npm run cy:open
 
 - Follow the existing code style and naming conventions
 - Add tests for any new functionality
+- New custom commands go in `cypress/support/commands.ts` and must be typed on `Cypress.Chainable` — run `npm run typecheck` before committing, since a missing `export {}` at the top of that file silently breaks every command's types
 - Keep commits small and focused with descriptive messages
 - Open an issue before submitting large changes
 

@@ -1,12 +1,12 @@
 {
   "name": "cypress-component-testing",
   "version": "1.0.0",
-  "description": "E2E and Component Testing with Cypress and TypeScript",
+  "description": "E2E test suite for saucedemo.com with Cypress and TypeScript",
   "scripts": {
+    "typecheck": "tsc --noEmit",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:e2e": "cypress run --spec 'cypress/e2e/**/*.cy.ts'",
-    "cy:run:component": "cypress run --component",
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:run:firefox": "cypress run --browser firefox",
     "cy:run:headed": "cypress run --headed"
