@@ -1,12 +1,12 @@
-# Contributing to cypress-component-testing
+# Contributing to cypress-e2e-testing
 
 Thank you for your interest in contributing!
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/damlapnar/cypress-component-testing.git
-cd cypress-component-testing
+git clone https://github.com/damlapnar/cypress-e2e-testing.git
+cd cypress-e2e-testing
 npm install
 ```
 

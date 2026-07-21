@@ -1,13 +1,13 @@
-# Cypress E2E & Component Testing
+# Cypress E2E Testing
 
 ![Cypress](https://img.shields.io/badge/Cypress-17202C?style=flat-square&logo=cypress&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-[![CI](https://github.com/damlapnar/cypress-component-testing/actions/workflows/cypress.yml/badge.svg)](https://github.com/damlapnar/cypress-component-testing/actions/workflows/cypress.yml)
+[![CI](https://github.com/damlapnar/cypress-e2e-testing/actions/workflows/cypress.yml/badge.svg)](https://github.com/damlapnar/cypress-e2e-testing/actions/workflows/cypress.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 End-to-end test suite for [saucedemo.com](https://www.saucedemo.com) built with Cypress 13 and TypeScript. Features custom commands, full checkout flow coverage, and CI via GitHub Actions.
 
-Despite the repository name, there's no actual component testing set up here — `cypress.config.ts` only defines an `e2e` block, and there's no UI of this project's own to component-test (the suite drives an external site end-to-end). Setting up real component testing would mean building components first; until then, this is an E2E suite.
+Renamed from `cypress-component-testing`: there's no UI of this project's own to component-test — the suite drives an external site end-to-end — so `cypress.config.ts` only ever defined an `e2e` block. The name now matches what's actually here instead of promising a component suite that would need a component to test first.
 
 ## Features
 

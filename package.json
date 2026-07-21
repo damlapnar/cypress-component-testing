@@ -1,5 +1,5 @@
 {
-  "name": "cypress-component-testing",
+  "name": "cypress-e2e-testing",
   "version": "1.0.0",
   "description": "E2E test suite for saucedemo.com with Cypress and TypeScript",
   "scripts": {
