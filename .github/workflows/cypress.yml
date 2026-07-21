@@ -5,6 +5,9 @@ on:
     branches: [main, develop]
   pull_request:
     branches: [main]
+  schedule:
+    # Catches saucedemo.com markup/copy drift with no code change to trigger it
+    - cron: '0 6 * * 1'
 
 jobs:
   cypress:
